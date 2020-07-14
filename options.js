@@ -44,7 +44,9 @@ function push_new_member(){
             gender: user_data_modal.find('#gender').val(),
             birthday_year: parseInt(user_data_modal.find('#birthday_year').val()),
             birthday_month: parseInt(user_data_modal.find('#birthday_month').val()),
-            birtyday_day: parseInt(user_data_modal.find('#birthday_day').val())
+            birthday_day: parseInt(user_data_modal.find('#birthday_day').val()),
+            contactname: user_data_modal.find('#contactname').val(),
+            contactphone: user_data_modal.find('#contactphone').val()
         };
         
         members.push(member_data);
@@ -71,6 +73,8 @@ function clean_modal_form(){
     user_data_modal.find('#birthday_year').val('');
     user_data_modal.find('#birthday_month').val('');
     user_data_modal.find('#birthday_day').val('');
+    user_data_modal.find('#contactname').val('');
+    user_data_modal.find('#contactphone').val('');
 }
 
 function del_member(idx){
@@ -105,7 +109,9 @@ function set_edit_form(idx){
         user_data_modal.find('#gender').val(member.gender);
         user_data_modal.find('#birthday_year').val(member.birthday_year);
         user_data_modal.find('#birthday_month').val(member.birthday_month);
-        user_data_modal.find('#birthday_day').val(member.birtyday_day);
+        user_data_modal.find('#birthday_day').val(member.birthday_day);
+        user_data_modal.find('#contactname').val(member.contactname);
+        user_data_modal.find('#contactphone').val(member.contactphone);
     });
 }
 
@@ -125,7 +131,9 @@ function save_edited_member(idx){
             gender: user_data_modal.find('#gender').val(),
             birthday_year: parseInt(user_data_modal.find('#birthday_year').val()),
             birthday_month: parseInt(user_data_modal.find('#birthday_month').val()),
-            birtyday_day: parseInt(user_data_modal.find('#birthday_day').val())
+            birthday_day: parseInt(user_data_modal.find('#birthday_day').val()),
+            contactname: user_data_modal.find('#contactname').val(),
+            contactphone: user_data_modal.find('#contactphone').val()
         };
         members[idx] = edited_member_data;
         chrome.storage.sync.set({members: members}, function() {

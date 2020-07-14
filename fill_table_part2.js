@@ -1,5 +1,3 @@
-location.href="javascript: window.alert = function(x) {console.log(x)};" //override alert function
-
 async function fill(){
     $('#ContentPlaceHolder1_rblNode_0').attr('checked',true); //塔塔加
     location.href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$rblNode$0','');"; //塔塔加trigger
